@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "JavaScript: The Good Parts",
+    "description": "Learn core JavaScript concepts and write cleaner, maintainable code.",
+    "category": "JavaScript",
+    "level": "Intermediate",
+    "image_url": ""
+  },
+  {
+    "id": 2,
+    "title": "Python Fundamentals",
+    "description": "Learn Python programming from the basics.",
+    "category": "Python",
+    "level": "Beginner",
+    "image_url": ""
+  },
+  {
+    "id": 3,
+    "title": "React Development",
+    "description": "Build modern web applications using React.",
+    "category": "React",
+    "level": "Intermediate",
+    "image_url": ""
+  }
+]

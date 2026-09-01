@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "course_id": 1,
+    "chapter_number": 1,
+    "title": "Values, Variables & Types",
+    "description": "Learn how JavaScript stores information.",
+    "content": "JavaScript has several important data types including string, number, boolean, null, undefined, object and symbol."
+  },
+  {
+    "id": 2,
+    "course_id": 1,
+    "chapter_number": 2,
+    "title": "Functions & Parameters",
+    "description": "Create reusable blocks of behavior.",
+    "content": "Functions allow you to group reusable logic. A function can receive parameters and return a value."
+  },
+  {
+    "id": 3,
+    "course_id": 1,
+    "chapter_number": 3,
+    "title": "Objects",
+    "description": "Group related data and behavior.",
+    "content": "Objects store related information using key-value pairs."
+  },
+  {
+    "id": 4,
+    "course_id": 1,
+    "chapter_number": 4,
+    "title": "Arrays",
+    "description": "Work with collections of values.",
+    "content": "Arrays are ordered collections of values. JavaScript provides methods such as map, filter and reduce."
+  },
+  {
+    "id": 5,
+    "course_id": 1,
+    "chapter_number": 5,
+    "title": "Scope & Closures",
+    "description": "Understand JavaScript scope and closures.",
+    "content": "Scope determines where variables can be accessed. Closures allow functions to remember variables from their surrounding scope."
+  },
+  {
+    "id": 6,
+    "course_id": 1,
+    "chapter_number": 6,
+    "title": "Good Parts",
+    "description": "Apply JavaScript best practices.",
+    "content": "Writing maintainable JavaScript involves using clear naming, avoiding unnecessary complexity and understanding the language features you use."
+  },
+
+  {
+    "id": 7,
+    "course_id": 2,
+    "chapter_number": 1,
+    "title": "Python Basics",
+    "description": "Learn Python syntax and variables.",
+    "content": "Python is a high-level programming language known for readable syntax."
+  },
+  {
+    "id": 8,
+    "course_id": 2,
+    "chapter_number": 2,
+    "title": "Functions",
+    "description": "Learn Python functions.",
+    "content": "Python functions are defined using the def keyword."
+  },
+
+  {
+    "id": 9,
+    "course_id": 3,
+    "chapter_number": 1,
+    "title": "React Basics",
+    "description": "Understand React components.",
+    "content": "React is a JavaScript library for building user interfaces using components."
+  },
+  {
+    "id": 10,
+    "course_id": 3,
+    "chapter_number": 2,
+    "title": "Props & State",
+    "description": "Understand props and state.",
+    "content": "Props allow data to be passed to components. State stores data that can change over time."
+  }
+]
