@@ -3,6 +3,9 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  build: {
+    chunkSizeWarningLimit: 4000, // Increases the Vite chunk size warning limit to 4MB
+  },
   plugins: [
     react(),
 
@@ -17,6 +20,7 @@ export default defineConfig({
       ],
 
       workbox: {
+        maximumFileSizeToCacheInBytes: 4194304, // Fixes build error by allowing cache size up to 4MB
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/dummyjson\.com\/users/i,

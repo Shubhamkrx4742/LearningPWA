@@ -5017,10 +5017,13 @@ a {
 .game-modal-overlay {
   position: fixed;
   inset: 0;
+  width: 100vw;   /* Forces full viewport width */
+  height: 100vh;  /* Forces full viewport height */
   z-index: 3000;
   display: grid;
   place-items: center;
   padding: 20px;
+  margin: 0;       /* Prevents displacement gaps */
   
   /* Gaming aesthetic background: dark base + colored glowing orbs + blur */
   background: 
@@ -5176,4 +5179,150 @@ a {
     transform: scale(1) translateY(0);
     filter: blur(0);
   }
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE & PWA UTILITIES
+   ========================================== */
+
+/* Ensure smooth touch behaviors */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* NAVBAR RESPONSIVENESS */
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 12px 16px !important;
+    gap: 12px;
+  }
+  
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-around;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 8px;
+    overflow-x: auto;
+  }
+  
+  .main-nav button {
+    font-size: 13px;
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+}
+
+/* HERO SECTION RESPONSIVENESS */
+@media (max-width: 768px) {
+  .hero {
+    padding: 30px 16px !important;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 28px !important;
+  }
+
+  .search-section {
+    padding: 0 16px;
+  }
+  
+  .search-box {
+    width: 100% !important;
+  }
+}
+
+/* GRID ADAPTATIONS FOR BOOKS & GAMES */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 0 16px;
+}
+
+@media (max-width: 480px) {
+  .book-grid {
+    grid-template-columns: 1fr; /* Single column on phones */
+  }
+}
+
+/* LEARNING SCREEN MOBILE ADAPTATIONS */
+@media (max-width: 768px) {
+  .learning-header {
+    padding: 10px 12px;
+  }
+  
+  .learning-header-right {
+    display: none; /* Hide top progress bar on small headers to save space */
+  }
+
+  .learning-body {
+    flex-direction: column !important;
+  }
+
+  .course-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80% !important;
+    max-width: 320px;
+    height: 100vh;
+    z-index: 1000;
+    background: white;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 10px 0 25px rgba(0,0,0,0.2);
+  }
+
+  .course-sidebar.sidebar-open {
+    left: 0;
+  }
+
+  .lesson-main {
+    padding: 16px !important;
+  }
+}
+
+/* MODALS & OVERLAYS MOBILE FULLSCREEN */
+@media (max-width: 640px) {
+  .book-modal, .profile-sidebar, .certificate-wrapper {
+    width: 100% !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+    padding: 16px !important;
+    overflow-y: auto;
+  }
+
+  .modal-backdrop {
+    padding: 0 !important;
+  }
+}
+
+/* CATEGORY PILLS HORIZONTAL SCROLL FIX */
+.category-section {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 16px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.category-scroll {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.category-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for clean native app look */
 }

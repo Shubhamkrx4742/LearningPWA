@@ -3,6 +3,7 @@ import CodeBreaker from "./CodeBreaker";
 import DebugDetective from "./DebugDetective";
 import LogicChallenge from "./LogicChallenge";
 import PatternBreaker from "./PatternBreaker";
+import PenFightArcade from "./PenFightArcade";
 
 function BrainGames({ onClaimXP }) {
   const [activeGame, setActiveGame] = useState("home");
@@ -34,7 +35,7 @@ function BrainGames({ onClaimXP }) {
       alert("No XP to claim yet! Play some challenges first.");
       return;
     }
-    
+
     if (onClaimXP) {
       onClaimXP(stats.totalScore);
     }
@@ -53,6 +54,14 @@ function BrainGames({ onClaimXP }) {
     { id: "debug-detective", icon: "🐛", title: "Debug Detective", description: "Inspect real code and identify subtle bugs before they cause problems.", difficulty: "Intermediate", points: "10–30 XP" },
     { id: "logic-challenge", icon: "🧠", title: "Logic Challenge", description: "Solve reasoning puzzles designed to test deduction and analytical thinking.", difficulty: "Hard", points: "15–40 XP" },
     { id: "pattern-breaker", icon: "🔢", title: "Pattern Breaker", description: "Find hidden mathematical and logical patterns.", difficulty: "Hard", points: "10–35 XP" },
+    {
+      id: "pen-fighter",
+      icon: "✏️",
+      title: "Pen Fight",
+      description: "The classic school desk battle. Drag back to aim, release to flick your pen, and knock rivals off the desk!",
+      difficulty: "Arcade",
+      points: "50 XP"
+    },
   ];
 
   return (
@@ -83,16 +92,16 @@ function BrainGames({ onClaimXP }) {
 
         {/* Claim XP Button */}
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <button 
-            type="button" 
+          <button
+            type="button"
             onClick={handleClaimReward}
-            style={{ 
-              background: stats.totalScore > 0 ? '#16a34a' : '#cbd5e1', 
-              color: 'white', 
-              border: 'none', 
-              padding: '16px 24px', 
-              borderRadius: '16px', 
-              fontWeight: '800', 
+            style={{
+              background: stats.totalScore > 0 ? '#16a34a' : '#cbd5e1',
+              color: 'white',
+              border: 'none',
+              padding: '16px 24px',
+              borderRadius: '16px',
+              fontWeight: '800',
               cursor: stats.totalScore > 0 ? 'pointer' : 'not-allowed',
               boxShadow: stats.totalScore > 0 ? '0 4px 12px rgba(22, 163, 74, 0.3)' : 'none',
               transition: 'all 0.2s ease'
@@ -152,7 +161,7 @@ function BrainGames({ onClaimXP }) {
             {activeGame === "debug-detective" && <DebugDetective onBack={() => setActiveGame("home")} onScore={addScore} />}
             {activeGame === "logic-challenge" && <LogicChallenge onBack={() => setActiveGame("home")} onScore={addScore} />}
             {activeGame === "pattern-breaker" && <PatternBreaker onBack={() => setActiveGame("home")} onScore={addScore} />}
-          </div>
+            {activeGame === "pen-fighter" && <PenFightArcade onBack={() => setActiveGame("home")} onScore={addScore} />}          </div>
         </div>
       )}
     </div>
